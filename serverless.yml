@@ -12,9 +12,6 @@ provider:
   runtime: nodejs18.x
   environment:
     COGNITO_USER_POOL_ID: ${self:custom.environment.COGNITO_USER_POOL_ID}
-    AWS_REGION: ${self:custom.environment.AWS_REGION}
-    AWS_ACCESS_KEY_ID: ${self:custom.environment.AWS_ACCESS_KEY_ID}
-    AWS_SECRET_ACCESS_KEY: ${self:custom.environment.AWS_SECRET_ACCESS_KEY}
     COGNITO_ENDPOINT: ${self:custom.environment.COGNITO_ENDPOINT}
 
 

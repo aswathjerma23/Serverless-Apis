@@ -3,12 +3,18 @@ import {
   VerifyUserAttributeCommand
 } from "@aws-sdk/client-cognito-identity-provider";
 
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const isLocal = process.env.NODE_ENV !== "production";
+
 const cognito = new CognitoIdentityProviderClient({
-  region: "us-east-1",               
-  endpoint: "http://localhost:9229", 
+  region: process.env.AWS_REGION || "us-east-1",
+  endpoint: isLocal ? "http://localhost:9229" : undefined, 
   credentials: {
-    accessKeyId: "dummy",            
-    secretAccessKey: "dummy"
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID || "fake",
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "fake"
   }
 });
 
