@@ -1,30 +1,28 @@
 service: verify-phone
-frameworkVersion: '3'
+frameworkVersion: '4'
 
 plugins:
-  - serverless-offline 
-
-custom:
-  environment: ${file(./config.json)}
+  - serverless-offline
 
 provider:
   name: aws
   runtime: nodejs18.x
-  environment:
-    COGNITO_USER_POOL_ID: ${self:custom.environment.COGNITO_USER_POOL_ID}
-    COGNITO_ENDPOINT: ${self:custom.environment.COGNITO_ENDPOINT}
+  region: us-east-1
 
+  environment:
+    COGNITO_USER_POOL_ID: ${env:COGNITO_USER_POOL_ID}
+    COGNITO_ENDPOINT: ${env:COGNITO_ENDPOINT}
 
 functions:
   updatePhone:
-    handler: handler/updatePhone.handler
+    handler: functions/updatePhone.handler
     events:
       - httpApi:
           path: /api/update-phone-number
           method: POST
 
   verifyPhone:
-    handler: handler/verifyPhone.handler
+    handler: functions/verifyPhone.handler
     events:
       - httpApi:
           path: /api/verify-updated-phone-number

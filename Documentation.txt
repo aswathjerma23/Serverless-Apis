@@ -1,0 +1,5 @@
+export AWS_ACCESS_KEY_ID=fake
+export AWS_SECRET_ACCESS_KEY=fake
+export AWS_REGION=us-east-1
+export COGNITO_USER_POOL_ID=local_user_pool
+export COGNITO_ENDPOINT=http://localhost:9229
