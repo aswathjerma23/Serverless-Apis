@@ -1,7 +1,0 @@
-{
-  "COGNITO_USER_POOL_ID": "your_pool",
-  "AWS_REGION": "ap-south-1",
-  "AWS_ACCESS_KEY_ID": "test",
-  "AWS_SECRET_ACCESS_KEY": "test",
-  "COGNITO_ENDPOINT": "http://localhost:9229"
-}
