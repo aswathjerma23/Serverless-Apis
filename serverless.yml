@@ -14,16 +14,23 @@ provider:
     COGNITO_ENDPOINT: ${env:COGNITO_ENDPOINT}
 
 functions:
-  updatePhone:
-    handler: functions/updatePhone.handler
+  sendOtp:
+    handler: functions/send-otp.handler
     events:
       - httpApi:
-          path: /api/update-phone-number
+          path: /api/send-otp
           method: POST
 
-  verifyPhone:
-    handler: functions/verifyPhone.handler
+  resendOtp:
+    handler: functions/resend-otp.handler
     events:
       - httpApi:
-          path: /api/verify-updated-phone-number
+          path: /api/resend-otp
+          method: POST
+
+  verifyOtp:
+    handler: functions/verify-otp.handler
+    events:
+      - httpApi:
+          path: /api/verify-otp
           method: POST

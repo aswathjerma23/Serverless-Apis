@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@aws-sdk/client-cognito-identity-provider": "^3.919.0"
+    "@aws-sdk/client-cognito-identity-provider": "^3.919.0",
+    "client-sns": "github:aws-sdk/client-sns",
+    "dotenv": "^17.2.3",
+    "mysql2": "^3.15.3",
+    "twilio": "^5.10.4"
   },
   "devDependencies": {
     "serverless": "^4.22.0",
